@@ -21,18 +21,15 @@
 
 ### 設定コマンド
 ```
-sudo apt install -y wget
-sudo apt install -y git
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-google-chrome
-pyton3 --version
-sudo apt install python3
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install -y wget git python3
 python3 --version
-pip3 install selenium
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 pip3 install selenium
 pip3 install chromedriver-binary==108.0.5359.71.0
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 
 ### cron設定
