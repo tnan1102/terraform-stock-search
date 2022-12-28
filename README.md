@@ -2,35 +2,33 @@
 * 株式分析用サーバを作成するtfファイル
 
 ### 利用方法
-1. aws configure list --profile terraform
+```
+# clone
+git clone https://{user}:{pass}@github.com/tnan1102/terraform-stock-search.git
+cd selenium-tutorial
 
-2. terraform init ※moduleを追加する度に必要
+# 認証情報が登録されていることを確認
+aws configure list --profile terraform
 
-3. AWS_PROFILE=terraform terraform plan -var-file=tfvars/terraform.tfvars
+# 初回 & moduleを追加する度に必要
+terraform init
 
-4. AWS_PROFILE=terraform terraform apply -var-file=tfvars/terraform.tfvars
+#差分確認
+AWS_PROFILE=terraform terraform plan -var-file=tfvars/terraform.tfvars
 
-5. AWS_PROFILE=terraform terraform destroy -var-file=tfvars/terraform.tfvars
+# 適用
+AWS_PROFILE=terraform terraform apply -var-file=tfvars/terraform.tfvars
 
+# 削除するとき
+AWS_PROFILE=terraform terraform destroy -var-file=tfvars/terraform.tfvars
+
+```
 ### 設定内容
 * Ubuntuインスタンス作成
 * 自動起動・停止設定(起動は土曜9時　停止は毎日0,6,12,18時)
 * python,selenium,Chromeドライバ インストール
 * 株検索プログラムclone
 * cron設定
-
-### 設定コマンド
-```
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt install -y wget git python3
-python3 --version
-sudo apt install -y python3-pip
-pip3 install selenium
-pip3 install chromedriver-binary==108.0.5359.71.0
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-```
 
 ### cron設定
 ```
