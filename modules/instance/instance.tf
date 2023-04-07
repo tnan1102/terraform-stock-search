@@ -17,6 +17,19 @@ resource "aws_instance" "cmn-instance" {
     volume_size = lookup(var.instance_root_volume_config, "volume_size")
   }
 
+  user_data = base64encode(<<-EOF
+              #!/bin/bash
+              apt-get update
+              apt install -y wget git python3 python3-pip
+              pip3 install selenium==4.1.0
+              cd /tmp
+              wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+              dpkg -i google-chrome-stable_current_amd64.deb
+              apt-get install -yf
+              pip3 install chromedriver-binary
+              EOF
+              )
+  
   # tags
   tags = {
     Name = lookup(var.instance_basic_config, "name")
