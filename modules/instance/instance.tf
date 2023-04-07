@@ -29,6 +29,8 @@ resource "aws_instance" "cmn-instance" {
               pip3 install chromedriver-binary
               EOF
               )
+  #実行に時間がかかるcat /var/log/cloud-init-output.logで実行ログを確認できる
+              
   
   # tags
   tags = {
