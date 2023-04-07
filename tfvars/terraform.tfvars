@@ -10,7 +10,7 @@
 stock-search_basic_config = {
   name = "stock-search"
   ami = "ami-0590f3a1742b17914" #Ubuntu 22.04 LTS
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
   key_name = "default-key"
   subnet_id = "subnet-025f86a7eea071c22"
   managed_by = "terraform"
