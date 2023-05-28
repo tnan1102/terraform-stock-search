@@ -14,6 +14,8 @@ stock-search_basic_config = {
   key_name = "default-key"
   subnet_id = "subnet-025f86a7eea071c22"
   managed_by = "terraform"
+  start_time = "06" #15時
+  stop_time = "07" #16時
 }
 
 stock-search_sg_config = [

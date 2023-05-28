@@ -36,6 +36,8 @@ resource "aws_instance" "cmn-instance" {
   tags = {
     Name = lookup(var.instance_basic_config, "name")
     managed_by = lookup(var.instance_basic_config, "managed_by")
+    start_time = lookup(var.instance_basic_config, "start_time")
+    stop_time = lookup(var.instance_basic_config, "stop_time")
   }
 }
 
